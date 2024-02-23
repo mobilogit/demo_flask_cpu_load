@@ -5,7 +5,7 @@ from applicationinsights.flask.ext import AppInsights
 from math import sqrt
 
 app = Flask(__name__)
-app.config['APPINSIGHTS_INSTRUMENTATIONKEY'] = os.getenv('INSTRUMENTATION_KEY')
+app.config['APPINSIGHTS_INSTRUMENTATIONKEY'] = os.getenv('APPINSIGHTS_INSTRUMENTATIONKEY')
 appinsights = AppInsights(app)
 
 # force flushing application insights handler after each request
