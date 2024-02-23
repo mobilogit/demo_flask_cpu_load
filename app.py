@@ -1,10 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for
+import os
 import time
 from applicationinsights.flask.ext import AppInsights
 from math import sqrt
 
 app = Flask(__name__)
-app.config['APPINSIGHTS_INSTRUMENTATIONKEY'] = 'ee2e18a3-974a-4be3-9a2f-c2bad6068c48'
+app.config['APPINSIGHTS_INSTRUMENTATIONKEY'] = os.getenv('INSTRUMENTATION_KEY')
 appinsights = AppInsights(app)
 
 # force flushing application insights handler after each request
